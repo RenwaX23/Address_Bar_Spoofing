@@ -12,6 +12,7 @@ Video POC: Bug-001.mp4
 
 POC Code
 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +41,7 @@ poc();
         </h1>
 </body>
 </html>
+```
 Mitigation
 When the URL is about:blank show an empty address bar or show the start of URL not end of it
 
