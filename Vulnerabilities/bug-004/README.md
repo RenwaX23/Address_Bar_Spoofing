@@ -43,7 +43,7 @@ Address Bar Spoofing will trick the victim into thinking they are on a legitimat
 
 ## References: N/A
 
-## POC Photo/Video: 
+## POC Photo/Video: brave_poc.mp4
 
 ## Discovery Date: 2024-10-19
 
