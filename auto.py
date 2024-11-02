@@ -4,6 +4,7 @@ import csv
 # File paths
 CSV_FILE = 'data.csv'
 BASE_DIR = 'Vulnerabilities'
+MAIN_README = 'README.md'
 
 def get_next_id():
     # Check if the CSV file exists
@@ -35,8 +36,8 @@ def create_folder_structure(bug_id, title, technique, severity, author, descript
     with open(poc_file_path, 'w') as poc_file:
         poc_file.write(poc_code)
 
-    # Create the readme.md file
-    readme_file_path = os.path.join(folder_path, 'readme.md')
+    # Create the README.md file for the individual bug
+    readme_file_path = os.path.join(folder_path, 'README.md')
     with open(readme_file_path, 'w') as readme_file:
         readme_file.write(f'# Title: {title}\n\n')
         readme_file.write(f'## Description: \n{description}\n\n')
@@ -60,6 +61,25 @@ def add_to_csv(bug_id, title, technique, severity, author, discovery_date, brows
         # Add the new row
         new_row = [bug_id, title, technique, severity, author, discovery_date, browser, affected_version, bounty, cve, reference]
         writer.writerow(new_row)
+
+def update_main_readme():
+    # Read data from CSV file
+    with open(CSV_FILE, mode='r', newline='', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        rows = list(reader)
+
+    # Generate Markdown table
+    table = "| " + " | ".join(rows[0]) + " |\n"  # Header row
+    table += "|---" * len(rows[0]) + "|\n"  # Separator row
+    for row in rows[1:]:
+        table += "| " + " | ".join(row) + " |\n"
+
+    # Update main README.md
+    with open(MAIN_README, 'w') as readme_file:
+        readme_file.write("# Address_Bar_Spoofing\n")
+        readme_file.write("Web Browsers address bar spoofing vulnerabilities\n\n")
+        readme_file.write("## Vulnerability Data\n\n")
+        readme_file.write(table)
 
 def main():
     # Collect user input for the new entry
@@ -95,13 +115,17 @@ def main():
     # Get the next ID
     bug_id = get_next_id()
     
-    # Create the folder structure and include details in readme.md
+    # Create the folder structure and include details in README.md
     folder_name = create_folder_structure(bug_id, title, technique, severity, author, description, discovery_date, browser, affected_version, bounty, cve, reference, poc_code)
     print(f'Created folder: {folder_name}')
     
     # Add the new entry to the CSV file
     add_to_csv(bug_id, title, technique, severity, author, discovery_date, browser, affected_version, bounty, cve, reference)
     print(f'Added entry to CSV: ID {bug_id}')
+    
+    # Update the main README.md with CSV content
+    update_main_readme()
+    print("Updated main README.md with current data.")
 
 if __name__ == '__main__':
     main()
