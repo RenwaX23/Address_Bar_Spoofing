@@ -13,3 +13,7 @@ ID,Title,Technique,Severity,Author,Discovery Date,Browser,Affected Version,Bount
 12,Iframe Injection in GX Corner to Address Bar Spoofing in Opera GX,Window-Without-Address-Bar,Low,Renwa,2024-02-19,Opera GX,0,250,0,Author
 13,Opera Mini - Full Address Bar Spoof,End-of-URL-Shown,Low,Renwa,2024-03-27,Opera Mini,79.0.2254.70805,500,0,Author
 14,Opera Mac/Windows - New Window Address Bar Spoof using PictureInPicture,Window-Without-Address-Bar,Medium,Renwa,2024-04-02,Opera ,0,3000,0,Author
+15,Brave iOS Address Bar Spoofing Using blob: URI,blob:-URI,Medium,Renwa,2024-10-17,Brave,1.72.0,250,0,Author
+16,Brave iOS Address Bar Spoofing Using about:blank URI,about:blank-URI,Medium,Renwa,2024-10-19,Brave,1.73.0,250,0,Author
+17,Brave iOS Address Bar Spoof Using 2 RTL (Arabic Characters) Subdomains,RTL-Character,Medium,Renwa,2024-10-18,Brave,1.69.2,250,0,Author
+18,Brave iOS Address Bar Spoof Using RTL Domain with RTL+LTR Subdomains,RTL-Character,Medium,Renwa,2024-11-2,Brave,1.70.1,250,0,Author

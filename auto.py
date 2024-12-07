@@ -46,7 +46,7 @@ def create_folder_structure(bug_id, title, technique, severity, author, descript
         readme_file.write(f'## Severity: {severity}\n\n')
         readme_file.write(f'## Spoof Type: {technique}\n\n')
         readme_file.write(f'## References: {reference}\n\n')
-        readme_file.write(f'## POC Photo/Video: {folder_name}.mp4\n\n')  # Placeholder for PoC links
+        readme_file.write(f'## POC Photo/Video: {folder_name}.mp4/.mov/.png\n\n')  # Placeholder for PoC links
         readme_file.write(f'## Discovery Date: {discovery_date}\n\n')
 
     return folder_name
