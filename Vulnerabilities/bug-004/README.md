@@ -1,49 +1,26 @@
-# Title: Brave iOS Address Bar Spoofing Using about:blank URI
+# Title: Full Address Bar Spoofing in Opera Touch and Opera GX Mobile
 
 ## Description: 
-##Summary:
-Brave iOS shows end of the URI in about:blank instead showing the beginning this will allow address bar spoof by constructing a long payload with a hash fragment # and hiding the start
+When you search for something using the address bar it will automatically redirect you to google and the search is reflected in address bar.
 
-## Products affected:
-Brave Browser iOS
+While testing I found out the app will change the address bar even if the user redirects from another site, it will just check if the domain starts with www.google.tld.tld (tld) is accepted as anything then the path starts with /search?client=ms-opera-touch-android&q=anything
 
-## Steps To Reproduce:
-Open in Brave iOS `https://REDACTED`
+Combining these 2 bugs I was able to spoof full address bar in the victim browser.
 
-## Supporting Material/References:
-Video POC
-
-{F3690294}
-
-## Expected results
-Address bar showing `about:blank#https://accounts.goo...`
-
-## Actual results
-Address bar shows `https://accounts.apple.com`
-
-## Technical Details
-The issue is the browser instead of showing the start of the URI it shows the end of it by abusing that we can insert a spoofed origin in end of it using a hash fragment # and this will hide the about:blank part in the beginning 
-
-
-
-## Mitigation
-Show start of the URL in the address bar
-
-## Impact
-
-Address Bar Spoofing will trick the victim into thinking they are on a legitimate origin and this allow stealing credentials and breaking one of the main browser security mechanisms.
+POC:
+https://www.google.pwr.wtf/search?q=https://www.google.com/login&client=ms-opera-touch-android
 
 ## Author: Renwa
 
-## Affected Browser(s): Brave
+## Affected Browser(s): Opera GX Mobile
 
-## Severity: Medium
+## Severity: High
 
-## Spoof Type: non-http scheme
+## Spoof Type: Search-Engine
 
-## References: N/A
+## References: https://medium.com/@renwa/you-are-not-where-you-think-you-are-opera-browsers-address-bar-spoofing-vulnerabilities-aa36ad8321d8
 
-## POC Photo/Video: brave_poc.mp4
+## POC Photo/Video: bug-004.mp4
 
-## Discovery Date: 2024-10-19
+## Discovery Date: 2022-10-06
 

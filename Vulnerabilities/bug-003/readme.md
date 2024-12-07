@@ -1,38 +1,32 @@
-# Title: Safari iOS Full Address Bar Spoof Using Tab Hanging
+# Title: Opera Mini Browser Address Bar Spoof
 
 ## Description: 
-# Summary
+While looking at Opera Mini for Android I found a critical bug which allow an attacker to spoof URL address bar and trick the victim to steal his credentials or any other act.
 
-In Safari iOS there is an issue which when a tab is opened the browser will change the address bar before the page load and make sure the host is reachable, with this we can open a new tab pointing to `apple.com:81` port 81 is not reachable and the tab will hang forever, then we will stop the window and change the tab contents to our spoofed content we want since the origin will become `about:blank` and accessible from our tab, after changing tab contents we will redirect the tab back to `apple.com:81` which the browser will change the address bar to `apple.com` and with our contents.
+I decompiled the app using jadx-gui app and looked at the source code to find anything interesting, In one of the packages I found this
 
-# Steps to reproduce
+return new zoa("client_welcome_update", this.b + ' ' + b2 + " 🎉", 5000, "opera-mini://open?url=https%3A%2F%2Fwww.opera.com%2Fmobile%2Fmini");
+Playing with the custom opera-mini://open:url= scheme was not that much interesting all it did was just a redirect to the given website in url parameter.
 
-- Open in Safari iOS `https://REDACTED`
+After so much fuzzing and different things I tried I found something really cool.
 
+If a web page let's say example.com has a link to the custom scheme which points to a website with a downloadable file the webpage will still be our domain but the address bar will change to the link we set.
 
-# Expected results
-
-Address bar showing `about:blank` or empty URL
-
-# Actual results
-
-Address bar shows `apple.com` with our contents displayed on the page 
-
-# Mitigation 
-
-Change the address bar to opener origin or about:blank or just show an empty URL
+attacker.com -> click link to opera-mini://open?url=google.com/download
+address bar changes to google.com/download
+contents of the page is still from attacker.com and user can interact with it
 
 ## Author: Renwa
 
-## Affected Browser(s): Safari iOS
+## Affected Browser(s): Opera Mini
 
 ## Severity: High
 
-## Spoof Type: address-hanging
+## Spoof Type: Internal-URI
 
-## References: 
+## References: https://medium.com/@renwa/you-are-not-where-you-think-you-are-opera-browsers-address-bar-spoofing-vulnerabilities-aa36ad8321d8
 
-## POC Photo/Video: safari_hang.mp4
+## POC Photo/Video: bug-003.mp4
 
-## Discovery Date: 2024-11-01
+## Discovery Date: 2022-09-29
 

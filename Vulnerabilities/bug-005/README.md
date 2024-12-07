@@ -1,30 +1,26 @@
-# Title: Brave iOS Address Bar Spoof Using RTL Domain with RTL+LTR Subdomains
+# Title: Opera GX For Android URL Spoof/Freeze
 
 ## Description: 
-## Summary:
+While looking at Opera GX for android I found another address bar spoof which allow an attacker trick a victim to send his credentials on spoofed origin.
 
-When Using an Arabic domain name which is a RTL along with a English LTR and another RTL subdomain in a certain size and number of characters we can spoof the address bar to show the subdomain instead of the main parent domain and trick users into thinking they're on another origin.
+I noticed something weird with GX, when there is an Arabic character in url combined with a normal a-z character the browser will hang and doesn't do anything but the url will be set to value we set.
+For example copy this URL and paste it inside the browser
+http://سgoogle.com
 
-## Products affected: 
-
-Brave iOS 1.70.1
-
-## Steps To Reproduce:
-
-- Open in Browser `http://xn--mgbaaaaaaaaaaaa.login.google.com.xn--ngbof4hb.xn--ngbc5azd/`
+It won't be considered a real vulnerability if we tell the victim to copy and paste this into the address bar, Luckily I found another way we can abuse to get our desired result. With putting the text inside a textarea and tabbing on search it will be shown on the address bar.
 
 
 ## Author: Renwa
 
-## Affected Browser(s): Brave iOS
+## Affected Browser(s): Opera GX Mobile
 
-## Severity: Medium
+## Severity: Low
 
-## Spoof Type: rtl-subdomain
+## Spoof Type: URL-Freeze
 
-## References: 
+## References: https://medium.com/@renwa/you-are-not-where-you-think-you-are-opera-browsers-address-bar-spoofing-vulnerabilities-aa36ad8321d8
 
-## POC Photo/Video: brave_rtl.jpg
+## POC Photo/Video: bug-005.mp4
 
-## Discovery Date: 2024-11-02
+## Discovery Date: 2022-10-27
 

