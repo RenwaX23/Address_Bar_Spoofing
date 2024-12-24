@@ -20,3 +20,5 @@ ID,Title,Technique,Severity,Author,Discovery Date,Browser,Affected Version,Bount
 19,Firefox Desktop Address Bar Spoofing Using Arabic Punycode and a long URL,RTL-Character,Medium,Renwa,2024-10-18,Firefox,128.4.0,2000,CVE-2024-11695,Author
 20,Edge - Mac - Address Bar Spoofing using Picture-in-Picture,Window-Withour-Address-Bar,Medium,Renwa,2024-03-27,Edge Mac,0,1000,CVE-2024-38093,Author
 21,Edge Mobile (Android-iOS) Address Bar Spoof Using Bing Search,Search-Engine,Medium,Renwa,2024-04-13,Edge Mobile,0,1000,CVE-2024-38083,Author
+22,Zerion Wallet App For iOS Address Bar and Wallet Confirmation Origin Spoof,Long-Subdomain,Medium,Renwa,2024-11-04,Zerion Wallet,2.13.0,0,0,Author
+23,Coinbase Wallet App For iOS Address Bar Origin Spoof,Long-Subdomain,Medium,Renwa,2024-12-11,Coinbase Wallet,29.22,0,0,Author
