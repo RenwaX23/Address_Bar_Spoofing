@@ -22,3 +22,15 @@ ID,Title,Technique,Severity,Author,Discovery Date,Browser,Affected Version,Bount
 21,Edge Mobile (Android-iOS) Address Bar Spoof Using Bing Search,Search-Engine,Medium,Renwa,2024-04-13,Edge Mobile,0,1000,CVE-2024-38083,Author
 22,Zerion Wallet App For iOS Address Bar and Wallet Confirmation Origin Spoof,Long-Subdomain,Medium,Renwa,2024-11-04,Zerion Wallet,2.13.0,0,0,Author
 23,Coinbase Wallet App For iOS Address Bar Origin Spoof,Long-Subdomain,Medium,Renwa,2024-12-11,Coinbase Wallet,29.22,0,0,Author
+24,Address Bar Spoofing Using about:blank URI,about:blank-URI,Medium,Renwa,2024-10-11,Arc Mac,1.74.0,0,0,Author
+25,Address Bar Spoofing using data: URI,data:-URI,Medium,Renwa,2024-10-15,Arc Mac,1.73.0,1000,0,Author
+26,Address Bar Spoofing using documentPictureInPicture,Window-Without-Address-Bar,Medium,Renwa,2024-10-08,Arc Mac,1.74.0,100,0,Author
+27,Address Bar Spoof Using Fullscreen,Fullscreen,Low,Renwa,2024-10-09,Arc Mac,1.73.0,500,0,Author
+28,Address Bar Spoof in Arc Search iOS,Invalid-Scheme,High,Renwa,2024-10-13,Arc iOS,1.38.0,5000,0,Author
+29,Arc Search iOS Full Address Bar Spoof Using Blob: URI ,blob:-URI,Medium,Renwa,2024-10-15,Arc iOS,1.38.0,500,0,Author
+30,Arc Search iOS Address Bar Spoof Using Search Functionality,Search-Engine,High,Renwa,2024-11-14,Arc iOS,1.38.0,5000,0,Author
+31,Arc Search Android Full Address Bar Spoof Using Custom Port Website Hanging,URL-Freeze,High,Renwa,2024-11-15,Arc Android,0,0,0,Author
+32,Arc Searc Android Address Bar Spoof Using Long Subdomain,Long-Subdomain,Medium,Renwa,2024-11-15,Arc Android,,0,0,Author
+33,Arc Search Android Address Bar Spoof Using Fullscreen,Fullscreen,Medium,Renwa,2024-11-15,Arc Android,0,500,0,Author
+34,Arc Search Android Full Address Bar Spoof by Redirecting to a 204 No Content Page,URL-Freeze,High,Renwa,2024-11-16,Arc Android,0,5000,0,Author
+35,Arc Browser address bar spoof using view-source:,view-source:-URI,Low,Renwa,2024-11-16,Arc Mac,1.74.0,100,0,Author

