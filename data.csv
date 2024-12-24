@@ -34,3 +34,7 @@ ID,Title,Technique,Severity,Author,Discovery Date,Browser,Affected Version,Bount
 33,Arc Search Android Address Bar Spoof Using Fullscreen,Fullscreen,Medium,Renwa,2024-11-15,Arc Android,0,500,0,Author
 34,Arc Search Android Full Address Bar Spoof by Redirecting to a 204 No Content Page,URL-Freeze,High,Renwa,2024-11-16,Arc Android,0,5000,0,Author
 35,Arc Browser address bar spoof using view-source:,view-source:-URI,Low,Renwa,2024-11-16,Arc Mac,1.74.0,100,0,Author
+36,Address Bar Spoofing Using blob: URI,blob:-URI,Medium,Renwa,2024-10-11,Arc Mac,1.74.0,0,0,Author
+37,Arc Browser address bar spoof using file:// URI,file:-URI,Low,Renwa,2024-11-21,Arc Mac,1.74.0,100,0,Author
+38,XSS in arcmobile-internal:// using Server-Side Redirect to Javascript: URI to Full Address Bar Spoof in Arc Search iOS,Internal-XSS,Medium,Renwa,2024-11-22,Arc iOS,1.38.0,500,0,Author
+39,Stored XSS in search.arc.net to Address Bar Spoof in Arc iOS and Potential UXSS,Search-Engine,Medium,Renwa,2024-11-16,Arc iOS,1.38.0,500,0,Author
