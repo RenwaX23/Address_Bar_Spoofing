@@ -38,3 +38,7 @@ ID,Title,Technique,Severity,Author,Discovery Date,Browser,Affected Version,Bount
 37,Arc Browser address bar spoof using file:// URI,file:-URI,Low,Renwa,2024-11-21,Arc Mac,1.74.0,100,0,Author
 38,XSS in arcmobile-internal:// using Server-Side Redirect to Javascript: URI to Full Address Bar Spoof in Arc Search iOS,Internal-XSS,Medium,Renwa,2024-11-22,Arc iOS,1.38.0,500,0,Author
 39,Stored XSS in search.arc.net to Address Bar Spoof in Arc iOS and Potential UXSS,Search-Engine,Medium,Renwa,2024-11-16,Arc iOS,1.38.0,500,0,Author
+40,FireFox Mobile Address Bar Spoof Using Long Subdomain,Long-Subdomain,Medium,Renwa,2024-10-18,Firefox Mobile,0,0,0,Author
+41,Firefox Mobile iOS Full Address Bar Spoof Using Open in New Tab and Javascript: URI,javascript:-URI,Medium,Renwa,2024-11-25,Firefox iOS,v133,2500,CVE-2025-23108,Author
+42,Firefox Mobile iOS Full Address Bar Spoof Using Server-Side Redirect to internal://local/errorpage,Internal-URI,High,Renwa,2024-11-24,Firefox iOS,v135,3000,CVE-2025-27426,Author
+43,Firefox Mobile iOS Address Bar Spoof Using Server-Side Redirect to non-http Scheme,Invalid-Scheme,Medium,Renwa,2025-02-02,Firefox iOS,135,2000,CVE-2025-27424,Author

