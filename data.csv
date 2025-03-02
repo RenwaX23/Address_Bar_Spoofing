@@ -46,3 +46,7 @@ ID,Title,Technique,Severity,Author,Discovery Date,Browser,Affected Version,Bount
 45,Yandex Browser iOS Address Bar Spoofing Using about:blank UR,about:blank-URI,Medium,Renwa,2024-10-23,Yandex iOS,0,0,0,Author
 46,Yandex Browser iOS Address Bar Spoof Using 2 RTL (Arabic Characters) Subdomains,RTL-Character,Low,Renwa,2024-10-23,Yandex iOS,0,0,0,Author
 47,Google App iOS Full Address Bar Spoof,about:blank-URI,Medium,Renwa,2024-11-02,Google iOS,357.0,500,0,A
+48,Brave iOS Address Bar Spoof and Potential UXSS Using brave://open-url?url=,Internal-URI,Low,Renwa,2024-12-08,Brave iOS,1.71.1 (125),100,0,a
+49,OKX App iOS-Android dApp Address Bar Origin Soof,URL-Freeze,High,Renwa,2024-12-11,OKX,6.109.0,0,0,0
+50,Coinbase Wallet App For iOS Address Bar Origin Spoof,Long-Subdomain,Medium,Renwa,2024-12-09,Coinbase Wallet iOS,0,0,0,0
+51,Playstation 5 Browser Full Address Bar Spoofing,Javascript:-URI,High,Renwa,2024-10-8,Playstation 5 Browser,0,0,0,0

