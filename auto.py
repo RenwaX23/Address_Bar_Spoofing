@@ -23,7 +23,7 @@ def get_next_id():
                 continue  # Skip rows with invalid IDs
     return max_id + 1
 
-def create_folder_structure(bug_id, title, technique, severity, author, description, discovery_date, browser, affected_version, bounty, cve, reference, poc_code):
+def create_folder_structure(bug_id, title, technique, severity, description, discovery_date, browser, affected_version, bounty, cve, poc_code):
     # Create folder name based on ID
     folder_name = f'bug-{bug_id:03d}'
     folder_path = os.path.join(BASE_DIR, folder_name)
@@ -41,25 +41,23 @@ def create_folder_structure(bug_id, title, technique, severity, author, descript
     with open(readme_file_path, 'w') as readme_file:
         readme_file.write(f'# Title: {title}\n\n')
         readme_file.write(f'## Description: \n{description}\n\n')
-        readme_file.write(f'## Author: {author}\n\n')
         readme_file.write(f'## Affected Browser(s): {browser}\n\n')
         readme_file.write(f'## Severity: {severity}\n\n')
         readme_file.write(f'## Spoof Type: {technique}\n\n')
-        readme_file.write(f'## References: {reference}\n\n')
         readme_file.write(f'## POC Photo/Video: {folder_name}.mp4/.mov/.png\n\n')  # Placeholder for PoC links
         readme_file.write(f'## Discovery Date: {discovery_date}\n\n')
 
     return folder_name
 
-def add_to_csv(bug_id, title, technique, severity, author, discovery_date, browser, affected_version, bounty, cve, reference):
+def add_to_csv(bug_id, title, technique, severity, discovery_date, browser, affected_version, bounty, cve):
     # Write the new entry to the CSV file
     with open(CSV_FILE, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         # Write the header if the file is new
         if file.tell() == 0:
-            writer.writerow(['ID', 'Title', 'Technique', 'Severity', 'Author', 'Discovery Date', 'Browser', 'Affected Version', 'Bounty', 'CVE', 'Reference'])
+            writer.writerow(['ID', 'Title', 'Technique', 'Severity', 'Discovery Date', 'Browser', 'Affected Version', 'Bounty', 'CVE'])
         # Add the new row
-        new_row = [bug_id, title, technique, severity, author, discovery_date, browser, affected_version, bounty, cve, reference]
+        new_row = [bug_id, title, technique, severity, discovery_date, browser, affected_version, bounty, cve]
         writer.writerow(new_row)
 
 def update_main_readme():
@@ -86,12 +84,10 @@ def main():
     title = input('Title: ')
     technique = input('Technique: ')
     severity = input('Severity: ')
-    author = input('Author: ')
     browser = input('Browser: ')
     affected_version = input('Affected Version: ')
     bounty = input('Bounty: ')
     cve = input('CVE (if any): ')
-    reference = input('Reference URL: ')
     discovery_date = input('Discovery Date (YYYY-MM-DD): ')
 
     print("Enter a long description (press Enter for new line, type 'END' on a new line to finish):")
@@ -116,11 +112,11 @@ def main():
     bug_id = get_next_id()
     
     # Create the folder structure and include details in README.md
-    folder_name = create_folder_structure(bug_id, title, technique, severity, author, description, discovery_date, browser, affected_version, bounty, cve, reference, poc_code)
+    folder_name = create_folder_structure(bug_id, title, technique, severity, description, discovery_date, browser, affected_version, bounty, cve, poc_code)
     print(f'Created folder: {folder_name}')
     
     # Add the new entry to the CSV file
-    add_to_csv(bug_id, title, technique, severity, author, discovery_date, browser, affected_version, bounty, cve, reference)
+    add_to_csv(bug_id, title, technique, severity, discovery_date, browser, affected_version, bounty, cve)
     print(f'Added entry to CSV: ID {bug_id}')
     
     # Update the main README.md with CSV content
