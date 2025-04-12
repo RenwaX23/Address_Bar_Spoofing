@@ -55,4 +55,10 @@ Web Browsers address bar spoofing vulnerabilities
 | 48 | Brave iOS Address Bar Spoof and Potential UXSS Using brave://open-url?url= | Internal-URI | Low | 12/8/24 | Brave iOS | 1.71.1 (125) | 100 | 0 |
 | 49 | OKX App iOS-Android dApp Address Bar Origin Soof | URL-Freeze | High | 12/11/24 | OKX | 6.109.0 | 0 | 0 |
 | 50 | Coinbase Wallet App For iOS Address Bar Origin Spoof | Long-Subdomain | Medium | 12/9/24 | Coinbase Wallet iOS | 0 | 0 | 0 |
-| 51 | Playstation 5 Browser Full Address Bar Spoofing | Javascript:-URI | High | 10/8/24 | Playstation 5 Browser | 0 | 0 | 052 | Address Bar Spoof Using Invalid Protocol in Naver Whale iOS | Invalid-Scheme | High | 2024-11-17 | NAVER Whale | 0 | 500 | 0 |
+| 51 | Playstation 5 Browser Full Address Bar Spoofing | Javascript:-URI | High | 10/8/24 | Playstation 5 Browser | 0 | 0 | 0 |
+| 52 | Address Bar Spoof Using Invalid Protocol in Naver Whale iOS | Invalid-Scheme | High | 2024-11-17 | NAVER Whale | 0 | 500 | 0 |
+| 53 | Address Bar Spoof Using Invalid Protocol | Invalid-Scheme | High | 2025-03-26 | Naver WHALE | 3.7.0 | 200 | 0 |
+| 54 | Safari iOS Full Address Bar Spoof Using Tab Hanging | URL-Freeze | Medium | 2024-11-02 | Safari | 18.2 | 0 | CVE-2025-24128 |
+| 55 | Safari Mac/iOS Full Address Bar Spoof Using Tab Hanging and Invalid URLS | URL-Freeze | Medium | 2024-11-26 | Safari | 18.2 | 0 | CVE-2025-24128 |
+| 56 | Safari Mac and iOS Address Bar Spoof | about:blank-URI | High | 2024-10-15 | Safari | 18.3 | 5000 | CVE-2025-24113 |
+| 57 | Safari Mac/iOS Browser Address Bar Spoof Using Search Engines | Search-Engine | Medium | 2024-10-17 | Safari | 18.3 | 1000 | CVE-2025-30467 |
