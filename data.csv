@@ -56,3 +56,4 @@ ID,Title,Technique,Severity,Discovery Date,Browser,Affected Version,Bounty,CVE
 55,Safari Mac/iOS Full Address Bar Spoof Using Tab Hanging and Invalid URLS,URL-Freeze,Medium,2024-11-26,Safari,18.2,0,CVE-2025-24128
 56,Safari Mac and iOS Address Bar Spoof,about:blank-URI,High,2024-10-15,Safari,18.3,5000,CVE-2025-24113
 57,Safari Mac/iOS Browser Address Bar Spoof Using Search Engines,Search-Engine,Medium,2024-10-17,Safari,18.3,1000,CVE-2025-30467
+58,Safari Mac Address Bar Spoof Using Cursor Overlap,overlap,Low,2025-05-05,Safari,18.4,,
