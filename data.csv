@@ -62,3 +62,10 @@ ID,Title,Technique,Severity,Discovery Date,Browser,Affected Version,Bounty,CVE
 61,Safari Browser Address Bar Spoof Using Redirect,URL-Freeze,Medium,2024-10-17,Safari,15.5,0,CVE-2025-43327
 62,Firefox Desktop Address Bar Spoof Using Search Query (bypass fix in bug 1970997),Search-Engine,Low,2025-07-09,Firefox ,141.0.0,0,CVE-2025-9183
 63,Rabby Wallet iOS Browser Address Bar Origin Spoof to Account Takeovers,Tab-Hanging,High,2025-07-11,Rabby Wallet,0.6.31,200,0
+64,Arc iOS Full Address Bar Spoof Using Timing Attack,URL-Freeze,High,2025-08-26,Arc iOS,1.44.1,10000,0
+65,Arc iOS Full Address Bar Spoof Using Search Functionality and Race Condition,Search-Engine,High,2025-07-07,Arc iOS,1.44.0,10000,0
+66,MetaMask iOS Address Bar Spoof Using Drag-Drop,URL-Freeze,Low,2025-07-26,MetaMask iOS,7.54.0,0,0
+67,Brave iOS Address Bar Spoof Using about:blank,about:blank-URI,Low,2025-07-17,Brave iOS,1.81,0,0
+68,MetaMask Wallet iOS - Browser Full Address Bar Spoof,Tab-Hanging,High,2024-09-18,MetaMask iOS,7.47.3,2500,0
+69,Brave iOS Address Bar Spoof with open-url and data: URI,data:-URI,Low,2025-07-17,Brave iOS,1.81,0,0
+70,Brave iOS Drag-Drop Address Bar Spoof,URL-Freeze,Low,2025-07-17,Brave iOS,1.81,0,0

