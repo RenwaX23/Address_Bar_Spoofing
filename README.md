@@ -78,3 +78,4 @@ Web Browsers address bar spoofing vulnerabilities
 | [71](./Vulnerabilities/bug-071) | Address Bar Spoof and UXSS Using Shortcuts Chrome iOS | End-of-URL-Shown | Low | 2024-12-09 | Chrome iOS | 140.0.7 | 0 | 0 |
 | [72](./Vulnerabilities/bug-072) | Firefox Address Bar Spoof with Long Subdomain and Popup | Long-Subdomain | Medium | 2025-03-01 | Firefox | 144.0 | 0 | 0 |
 | [73](./Vulnerabilities/bug-073) | Edge Mobile (Android-iOS) Full Address Bar Spoof Using Bing and Path Traversal | Search-Engine | Medium | 2024-10-14 | Edge Mobile | 0 | 1000 | 0 |
+| [74](./Vulnerabilities/bug-074) | Edge iOS Address Bar Spoof Using 2 RTL (Arabic Characters) Subdomains | RTL-Character | Medium | 2024-10-18 | Edge iOS | 140.34 | 0 | 0 |

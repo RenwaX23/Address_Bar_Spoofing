@@ -72,3 +72,4 @@ ID,Title,Technique,Severity,Discovery Date,Browser,Affected Version,Bounty,CVE
 71,Address Bar Spoof and UXSS Using Shortcuts Chrome iOS,End-of-URL-Shown,Low,2024-12-09,Chrome iOS,140.0.7,0,0
 72,Firefox Address Bar Spoof with Long Subdomain and Popup,Long-Subdomain,Medium,2025-03-01,Firefox,144.0,0,0
 73,Edge Mobile (Android-iOS) Full Address Bar Spoof Using Bing and Path Traversal,Search-Engine,Medium,2024-10-14,Edge Mobile,0,1000,0
+74,Edge iOS Address Bar Spoof Using 2 RTL (Arabic Characters) Subdomains,RTL-Character,Medium,2024-10-18,Edge iOS,140.34,0,0
