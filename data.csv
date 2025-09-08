@@ -71,3 +71,4 @@ ID,Title,Technique,Severity,Discovery Date,Browser,Affected Version,Bounty,CVE
 70,Brave iOS Drag-Drop Address Bar Spoof,URL-Freeze,Low,2025-07-17,Brave iOS,1.81,0,0
 71,Address Bar Spoof and UXSS Using Shortcuts Chrome iOS,End-of-URL-Shown,Low,2024-12-09,Chrome iOS,140.0.7,0,0
 72,Firefox Address Bar Spoof with Long Subdomain and Popup,Long-Subdomain,Medium,2025-03-01,Firefox,144.0,0,0
+73,Edge Mobile (Android-iOS) Full Address Bar Spoof Using Bing and Path Traversal,Search-Engine,Medium,2024-10-14,Edge Mobile,0,1000,0
