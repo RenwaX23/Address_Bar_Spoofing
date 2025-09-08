@@ -57,3 +57,8 @@ ID,Title,Technique,Severity,Discovery Date,Browser,Affected Version,Bounty,CVE
 56,Safari Mac and iOS Address Bar Spoof,about:blank-URI,High,2024-10-15,Safari,18.3,5000,CVE-2025-24113
 57,Safari Mac/iOS Browser Address Bar Spoof Using Search Engines,Search-Engine,Medium,2024-10-17,Safari,18.3,1000,CVE-2025-30467
 58,Safari Mac Address Bar Spoof Using Cursor Overlap,overlap,Low,2025-05-05,Safari,18.4,,
+59,Safari Address Bar Spoof Using blob: URI,blob:-URI,High,2024-10-15,Safari,18.3,0,CVE-2025-24113
+60,Safari New Window Address Bar Spoof With a Subdomain or Long Domain,Long-Subdomain,Medium,2025-02-08,Safari,15.4,1000,CVE-2025-31266
+61,Safari Browser Address Bar Spoof Using Redirect,URL-Freeze,Medium,2024-10-17,Safari,15.5,0,CVE-2025-43327
+62,Firefox Desktop Address Bar Spoof Using Search Query (bypass fix in bug 1970997),Search-Engine,Low,2025-07-09,Firefox ,141.0.0,0,CVE-2025-9183
+63,Rabby Wallet iOS Browser Address Bar Origin Spoof to Account Takeovers,Tab-Hanging,High,2025-07-11,Rabby Wallet,0.6.31,200,0

