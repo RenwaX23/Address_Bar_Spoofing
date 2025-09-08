@@ -1,4 +1,4 @@
-# Address Bar Spoofing
+# Address_Bar_Spoofing
 Web Browsers address bar spoofing vulnerabilities
 
 ## Vulnerability Data
@@ -75,3 +75,5 @@ Web Browsers address bar spoofing vulnerabilities
 | 68 | MetaMask Wallet iOS - Browser Full Address Bar Spoof | Tab-Hanging | High | 2024-09-18 | MetaMask iOS | 7.47.3 | 2500 | 0 |
 | 69 | Brave iOS Address Bar Spoof with open-url and data: URI | data:-URI | Low | 2025-07-17 | Brave iOS | 1.81 | 0 | 0 |
 | 70 | Brave iOS Drag-Drop Address Bar Spoof | URL-Freeze | Low | 2025-07-17 | Brave iOS | 1.81 | 0 | 0 |
+| 71 | Address Bar Spoof and UXSS Using Shortcuts Chrome iOS | End-of-URL-Shown | Low | 2024-12-09 | Chrome iOS | 140.0.7 | 0 | 0 |
+| 72 | Firefox Address Bar Spoof with Long Subdomain and Popup | Long-Subdomain | Medium | 2025-03-01 | Firefox | 144.0 | 0 | 0 |

