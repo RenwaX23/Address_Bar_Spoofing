@@ -1,6 +1,7 @@
 import os
 import csv
 
+
 # File paths
 CSV_FILE = 'data.csv'
 BASE_DIR = 'Vulnerabilities'
